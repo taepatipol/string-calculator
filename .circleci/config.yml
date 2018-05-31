@@ -3,7 +3,7 @@ jobs:
   build:
     docker:
       - image: circleci/node
-    working_directory: /workspace
+    working_directory: ~/workspace
     steps:
       - checkout
       - restore_cache:
@@ -28,7 +28,7 @@ jobs:
           command: |
             npm run xunit
       - store_test_results:
-          path: /workspace/results
+          path: ~/workspace/results
       - store_artifacts:
-          path: /workspace/results
+          path: ~/workspace/results
           destination: results
