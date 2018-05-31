@@ -6,7 +6,8 @@
   "scripts": {
     "lint": "eslint .",
     "fix": "eslint . --fix",
-    "test": "mocha --reporter=nyan"
+    "test": "mocha --reporter=nyan",
+    "xunit": "mocha --reporter=xunit --reporter-options output=results/string-calculator.xml"
   },
   "author": "",
   "license": "ISC",
