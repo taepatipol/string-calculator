@@ -1,6 +1,7 @@
 const chai = require('chai');
 
 const { expect } = chai;
+const { calc } = require('../main');
 
 // Start test cases for Example Behaviors
 function itAlwaysTrue() {
@@ -21,3 +22,8 @@ function exampleBehaviors() {
 // Start Describe
 describe('Example', exampleBehaviors);
 
+describe('string calculator', () => {
+  it('should return 0 for empty string', () => {
+    expect(calc('')).to.equal(0);
+  });
+});
