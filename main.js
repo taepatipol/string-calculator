@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-restricted-globals
 const isNum = input => !isNaN(input);
 
 const calc = (input) => {
