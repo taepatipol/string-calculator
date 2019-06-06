@@ -26,4 +26,8 @@ describe('string calculator', () => {
   it('should return 0 for empty string', () => {
     expect(calc('')).to.equal(0);
   });
+
+  it('should return number for number input', () => {
+    expect(calc('76')).to.equal(76);
+  });
 });
