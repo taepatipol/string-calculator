@@ -30,4 +30,9 @@ describe('string calculator', () => {
   it('should return number for number input', () => {
     expect(calc('76')).to.equal(76);
   });
+
+  it('should sum numbers with ,', () => {
+    expect(calc('4,5')).to.equal(9);
+    expect(calc('8,7')).to.equal(15);
+  });
 });
