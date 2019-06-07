@@ -44,8 +44,16 @@ describe('string calculator', () => {
   it('should sum numbers with newline', () => {
     expect(calc('1\n2\n3')).to.equal(6);
     expect(calc('1,2,3')).to.equal(6);
+    expect(calc('1,2\n3')).to.equal(6);
   });
   it('should no negative numbers', () => {
-    expect(calc('-1,-2')).to.throw();
+    expect(() => calc('-1,-2')).to.throw('negative');
+  });
+
+  it('should ignore number greater than 1000', () => {
+    expect(calc('1002')).to.equal(0);
+    expect(calc('1002,2')).to.equal(2);
+    expect(calc('1088\n78')).to.equal(78);
+    expect(calc('1002\n5,5')).to.equal(10);
   });
 });
