@@ -16,10 +16,14 @@ const calc = (input) => {
     return arrSum(inputArr);
   } else if (input.includes('\n') || input.includes(',')) {
     const separators = ['\n', ','];
-    const num = input.split(new RegExp(separators.join('\n'), ','));
+    const num = input.split(new RegExp(separators.join('\n'), ',')).map(Number);
     let sum = 0;
     for (let i = 0; i < num.length; i += 1) {
-      sum += num[i];
+      if (num[i] >= 0) {
+        sum += num[i];
+      } else {
+        throw new Error('No Negative number');
+      }
     }
     return sum;
   }

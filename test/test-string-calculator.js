@@ -45,4 +45,7 @@ describe('string calculator', () => {
     expect(calc('1\n2\n3')).to.equal(6);
     expect(calc('1,2,3')).to.equal(6);
   });
+  it('should no negative numbers', () => {
+    expect(calc('-1')).to.throw();
+  });
 });
