@@ -35,4 +35,9 @@ describe('string calculator', () => {
     expect(calc('4,5')).to.equal(9);
     expect(calc('8,7')).to.equal(15);
   });
+
+  it('should sum numbers with newline', () => {
+    expect(calc('4\n7')).to.equal(11);
+    expect(calc('8 \n 8')).to.equal(16);
+  });
 });
