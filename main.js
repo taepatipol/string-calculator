@@ -14,6 +14,14 @@ const calc = (input) => {
     let inputArr = input.split('\n');
     inputArr = inputArr.map(s => Number(s));
     return arrSum(inputArr);
+  } else if (input.includes('\n') || input.includes(',')) {
+    const separators = ['\n', ','];
+    const num = input.split(new RegExp(separators.join('\n'), ','));
+    let sum = 0;
+    for (let i = 0; i < num.length; i += 1) {
+      sum += num[i];
+    }
+    return sum;
   }
   return 0;
 };
